@@ -59,7 +59,7 @@ Si `fastjack.py` esta en Escritorio
 
   Cambiando cantidad de Clientes:
 * `python fastjack.py www.ejemplo.com -r 128` Para 128 Clientes
-  Cambiando tiempo de espera entre Headers:
+  Cambiando el puerto:
 * `python fastjack.py www.ejemplo.com -p 443` Para cambiar puerto defecto 80 a 443.
   Combinando comandos:
 * `python fastjack.py www.ejemplo.com -r 128 -p 443`
