@@ -1,4 +1,4 @@
-![alt text](https://raw.githubusercontent.com/neo-jack-official/FastJack/img/vista01.png)
+![alt text](https://raw.githubusercontent.com/neo-jack-official/FastJack/master/img/vista01.png)
 # fastjack.py - FastJack es un remake (nueva version) de Torshammer 1.0, re editado por Neo-Jack ENE/2020
 
 ## ¿Qué es FasJack?
