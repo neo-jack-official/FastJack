@@ -46,7 +46,7 @@ Luego puede usar la opción `-x` para activar el soporte SOCKS5 y las opciones` 
 * `-h = Ayuda`
 * `-t = Para fijar Targer WEB` Nota: no es requerido usar -t, solo opcional
 * `-p = Puerto, por defecto : 80`
-* `-r = Clientes, por defecto : 2` recomendacion (entre 128 a 320)
+* `-r = Clientes, por defecto : 256` recomendacion (entre 128 a 320)
 * `-T = Habilitar el enrutamiento TOR, por defecto: Activado`
 
 ## Como lo utiliso?
