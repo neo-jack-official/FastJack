@@ -71,7 +71,7 @@ Los nuevos IIS y Apache 2.X con ~ 256 Clientes.
 
 ## Problemas.
 
-# 1) Si precenta problemas con la conexion automatica TOR.
+# 1) Si precentas problemas con la conexion automatica TOR.
 
 Edite fastjack.py con su editor de texto favorito:
 1) Busque las lineas:
