@@ -44,7 +44,7 @@ Luego puede usar la opción `-x` para activar el soporte SOCKS5 y las opciones` 
 ## Opciones de Configuracion
 
 * `-h = Ayuda`
-* `-t = Para fijar Targer WEB` Nota: no es requerido usar -t, solo opcional
+* `-t = Para fijar Targer WEB` # Nota: ES REQUERIDO USAR -t
 * `-p = Puerto, por defecto : 80`
 * `-r = Clientes, por defecto : 256` recomendacion (entre 128 a 320)
 * `-T = Habilitar el enrutamiento TOR, por defecto: Activado`
@@ -53,16 +53,16 @@ Luego puede usar la opción `-x` para activar el soporte SOCKS5 y las opciones` 
 
 Si `fastjack.py` esta en Escritorio
 1) Abra terminal, Escriba `cd Escritorio`
-2) Ejecute bajo Python `python fastjack.py www.ejemplo.com`
+2) Ejecute bajo Python `python fastjack.py -t www.ejemplo.com`
 
 ## Ejemplos de comandos.
 
   Cambiando cantidad de Clientes:
-* `python fastjack.py www.ejemplo.com -r 128` Para 128 Clientes
+* `python fastjack.py -t www.ejemplo.com -r 128` Para 128 Clientes
   Cambiando el puerto:
-* `python fastjack.py www.ejemplo.com -p 443` Para cambiar puerto defecto 80 a 443.
+* `python fastjack.py -t www.ejemplo.com -p 443` Para cambiar puerto defecto 80 a 443.
   Combinando comandos:
-* `python fastjack.py www.ejemplo.com -r 128 -p 443`
+* `python fastjack.py -t www.ejemplo.com -r 128 -p 443`
 
 ## Servidores Afectados
 Servidores web desprotegidos que ejecutan Apache e IIS a través de una sola instancia.
