@@ -122,14 +122,15 @@ class httpPost(Thread):
                     pass
 
 def usage():
-    print "python fastjack.py -t <web> [-r <Clientes> -p <Puerto> -T -h]"
+    print Back.RED + Fore.GREEN + Style.BRIGHT + "python fastjack.py -t <web> [-r <Clientes> -p <Puerto> -T -h]" + Style.RESET_ALL
     print " -t / --web: <Web | IP>"
     print " -r / --clientes: <Numero de Clientes> Defecto: 256"
     print " -p / --puerto : <Puerto Web> Defecto: 80"
     print " -T / --tor: Enable anonymising through tor on 127.0.0.1:9050"
     print " -h : Muestra esta Ayuda\n" 
-    print "Ej. Python fastjack.py -t www.ejemplo.com"
-    print "Ej. Python fastjack.py -t www.ejemplo.com -r 256 -p 80\n"
+    print Back.RED + Fore.GREEN + Style.BRIGHT + "Ej. python fastjack.py -t www.ejemplo.com" + Style.RESET_ALL
+    print Back.RED + Fore.GREEN + Style.BRIGHT + "Ej. python fastjack.py -t www.ejemplo.com -r 256 -p 80" + Style.RESET_ALL
+    print "\n"
 
 tor = True
 if tor is True:
@@ -154,7 +155,7 @@ def main(argv):
 
     global stop_now
 
-    target = sys.argv[1]	
+    target = ''	
     threads = 256
 ################## cambie tor = True por False para desactivar auto conexion a Tor.
     tor = True
@@ -236,4 +237,3 @@ def main(argv):
 if __name__ == "__main__":
 
     main(sys.argv[1:])
-
