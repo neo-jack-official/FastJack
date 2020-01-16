@@ -76,7 +76,7 @@ Los nuevos IIS y Apache 2.X con ~ 256 Clientes.
 Edite fastjack.py con su editor de texto favorito:
 1) Busque las lineas:
 
-    target = sys.argv[1]	
+    target = ''
     threads = 256
     `tor = True`
     port = 80 
