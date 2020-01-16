@@ -87,7 +87,7 @@ por:
 * `tor = False`
 
 si usted en el futuro quiere utilizar la red TOR solo agrege -T a la linea de comandos.
-* `python fastjack.py www.ejemplo.com -T`
+* `python fastjack.py -t www.ejemplo.com -T`
 
 # 2) Si usted tiene un Terminal distinto a (Genome Terminal)
 
@@ -102,6 +102,7 @@ De esta forma desactivara el modulo acoplado HostJack-Checker sin afectar el fun
 
 HostJack-Checker podra ejecutarlo de forma separada.
 * `python hostjack-checker.py www.ejemplo.com`
+HostJack-Checker NO requiere de argumento -t para operar.
 
 ## Agradecimientos a:
 ShadowsDdos : Colaboracion en gestion modular de codigo para comportamiento autonomo de forma independiente con captacion de variable.
