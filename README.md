@@ -63,8 +63,7 @@ Si `fastjack.py` esta en Escritorio
 * `python fastjack.py -t www.ejemplo.com -p 443` Para cambiar puerto defecto 80 a 443.
   Combinando comandos:
 * `python fastjack.py -t www.ejemplo.com -r 128 -p 443`
-Activando TOR:
-* `python fastjack.py -t www.ejemplo.com -T`
+* `python fastjack.py -t www.ejemplo.com -T` Activando TOR
 
 
 ## Servidores Afectados
