@@ -100,10 +100,11 @@ Edite fastjack.py con su editor de texto favorito:
 De esta forma desactivara el modulo acoplado HostJack-Checker sin afectar el funcionamiento de FastJack
 
 HostJack-Checker podra ejecutarlo de forma separada. y Activar TOR si lo desea.
-Sin TOR
+
+-Sin TOR
 * `python hostjack-checker.py -t www.ejemplo.com `
 * `python hostjack-checker.py -t www.ejemplo.com -F`
-Con TOR
+-Con TOR
 * `python hostjack-checker.py -t www.ejemplo.com -T`
 HostJack-Checker NO requiere de argumento -t para operar.
 
