@@ -63,6 +63,9 @@ Si `fastjack.py` esta en Escritorio
 * `python fastjack.py -t www.ejemplo.com -p 443` Para cambiar puerto defecto 80 a 443.
   Combinando comandos:
 * `python fastjack.py -t www.ejemplo.com -r 128 -p 443`
+Activando TOR:
+* `python fastjack.py -t www.ejemplo.com -T`
+
 
 ## Servidores Afectados
 Servidores web desprotegidos que ejecutan Apache e IIS a través de una sola instancia.
@@ -71,37 +74,38 @@ Los nuevos IIS y Apache 2.X con ~ 256 Clientes.
 
 ## Problemas.
 
-# 1) Si precentas problemas con la conexion automatica TOR.
+# 1) Puedes dejar activa la conexion TOR de forma automatica.
 
 Edite fastjack.py con su editor de texto favorito:
 1) Busque las lineas:
 
 * target = ''
 * threads = 256
-* `tor = True`
+* `tor = False`
 * port = 80 
 
 2) Modifique:
-* tor = True
+* tor = False
 por: 
-* `tor = False`
-
-si usted en el futuro quiere utilizar la red TOR solo agrege -T a la linea de comandos.
-* `python fastjack.py -t www.ejemplo.com -T`
+* `tor = True`
 
 # 2) Si usted tiene un Terminal distinto a (Genome Terminal)
 
 Edite fastjack.py con su editor de texto favorito:
 1) Busque la linea:
-       ` os.system("gnome-terminal -- python hostjack-checker.py " + target) `
+       ` os.system("gnome-terminal -- python hostjack-checker.py " + target + " " + torstatus) `
 
 2) Modifiquela colocando un # al principio de la linea
-       `# os.system("gnome-terminal -- python hostjack-checker.py " + target) `
+       `# os.system("gnome-terminal -- python hostjack-checker.py " + target + " " + torstatus) `
 
 De esta forma desactivara el modulo acoplado HostJack-Checker sin afectar el funcionamiento de FastJack
 
 HostJack-Checker podra ejecutarlo de forma separada.
-* `python hostjack-checker.py www.ejemplo.com`
+Sin TOR
+* `python hostjack-checker.py -t www.ejemplo.com `
+* `python hostjack-checker.py -t www.ejemplo.com -F`
+Con TOR
+* `python hostjack-checker.py -t www.ejemplo.com -T`
 HostJack-Checker NO requiere de argumento -t para operar.
 
 ## Agradecimientos a:
