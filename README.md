@@ -104,6 +104,7 @@ HostJack-Checker podra ejecutarlo de forma separada. y Activar TOR si lo desea.
 -Sin TOR
 * `python hostjack-checker.py -t www.ejemplo.com `
 * `python hostjack-checker.py -t www.ejemplo.com -F`
+
 -Con TOR
 * `python hostjack-checker.py -t www.ejemplo.com -T`
 HostJack-Checker NO requiere de argumento -t para operar.
