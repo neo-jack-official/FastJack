@@ -102,11 +102,12 @@ De esta forma desactivara el modulo acoplado HostJack-Checker sin afectar el fun
 HostJack-Checker podra ejecutarlo de forma separada. y Activar TOR si lo desea.
 
 -Sin TOR
-* `python hostjack-checker.py -t www.ejemplo.com `
-* `python hostjack-checker.py -t www.ejemplo.com -F`
+* `python hostjack-checker.py www.ejemplo.com `
+* `python hostjack-checker.py www.ejemplo.com -F`
 
 -Con TOR
-* `python hostjack-checker.py -t www.ejemplo.com -T`
+* `python hostjack-checker.py www.ejemplo.com -T`
+
 HostJack-Checker NO requiere de argumento -t para operar.
 
 ## Agradecimientos a:
