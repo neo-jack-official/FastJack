@@ -16,7 +16,7 @@ Esto llena el cupo de peticiones del servidor inundandolo y evita que pueda resp
 
 ## Como Instalar y correr PYTHON?
 
-Slowjack es un archivo con extencion "Py", solo requiere tener pre instalado Python.
+Fastjack es un archivo con extencion "Py", solo requiere tener pre instalado Python.
 
 ## Preparamos la instalacion para python
 
