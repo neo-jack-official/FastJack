@@ -9,8 +9,8 @@ Es una herramienta de prueba lenta de denegación de servicios POST.
 1. Realiza publicaciones POST, por clientes pre asignados.(defecto: 256, recomendado de 128 a 320)
 2. se envian encabezados periódicamente (cada ~ 0.1 seg.) de forma continua, sin pausas.
 3. Nunca se cierra la conexión a menos que el servidor lo haga. Si el servidor cierra una conexión, se crea una nueva (se muestra como "Re-Conectando Cliente") y seguimos haciendo lo mismo.
-4. Por defecto se conexta automaticamente a servidor TOR en 127.0.0.1:9050.
-5. FastJack incorpora Modulo independiente HostJack-Checker.py beta, con auto Ejecucion. (verifica estado del Servidor, cada 9.5 Seg en ventana independiente "Version beta NO incluye Conexion TOR")
+4. Cuando activa Tor:Por defecto se conexta a servidor TOR en 127.0.0.1:9050.
+5. FastJack incorpora Modulo independiente HostJack-Checker.py beta, con auto Ejecucion. (verifica estado del Servidor, cada 9.5 Seg en ventana independiente)
 
 Esto llena el cupo de peticiones del servidor inundandolo y evita que pueda responder a peticiones externas de terceros.
 
@@ -47,7 +47,7 @@ Luego puede usar la opción `-x` para activar el soporte SOCKS5 y las opciones` 
 * `-t = Para fijar Targer WEB` # Nota: ES REQUERIDO USAR -t
 * `-p = Puerto, por defecto : 80`
 * `-r = Clientes, por defecto : 256` recomendacion (entre 128 a 320)
-* `-T = Habilitar el enrutamiento TOR, por defecto: Activado`
+* `-T = Habilitar el enrutamiento TOR, por defecto: Desactivado`
 
 ## Como lo utiliso?
 
