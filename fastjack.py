@@ -13,7 +13,6 @@ import socket
 import socks 
 import requests 
 import string
-import terminal
 import urllib2 
 #import re
 #import json
@@ -21,11 +20,8 @@ from colorama import Fore, Back, Style
 from threading import Thread
 from urllib2 import urlopen
 
-
 global stop_now
-global term
 stop_now = False
-term = terminal.TerminalController()
 
 useragents = [
  "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET CLR 3.0.04506.30)",
