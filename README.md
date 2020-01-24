@@ -14,7 +14,7 @@ Es una herramienta de prueba lenta de denegación de servicios POST.
 
 Esto llena el cupo de peticiones del servidor inundandolo y evita que pueda responder a peticiones externas de terceros.
 
-## Como Instalar y correr PYTHON?
+## Como Instalar PYTHON?
 
 FastJack es un archivo con extencion "Py", solo requiere tener pre instalado Python.
 
@@ -29,17 +29,6 @@ FastJack es un archivo con extencion "Py", solo requiere tener pre instalado Pyt
 ## Revisamos que python esta instalado correctamente
 
 * `python -V | python3 -V`
-
-
-### Soporte para proxy SOCKS5
-
-Si planea usar la opción `-x` para usar un proxy SOCKS5 para conectarse en lugar de una conexión directa a través de su dirección IP, deberá instalar la biblioteca` PySocks`.
- [`PySocks`] (https://github.com/Anorov/PySocks)
- [` SocksiPy`] (http://socksipy.sourceforge.net/) by GitHub @Anorov y puede ser instalado fácilmente por comando ` pip` 
-
-* `sudo pip3 install PySocks`
-
-Luego puede usar la opción `-x` para activar el soporte SOCKS5 y las opciones` --proxy-host` y `--proxy-port` para especificar el host proxy SOCKS5 y su puerto, si son diferentes del estándar` 127.0.0.1: 8080`.
 
 ## Opciones de Configuracion
 
@@ -90,7 +79,7 @@ por:
 
 # 2) Si usted tiene un Terminal distinto a (Genome Terminal)
 
-Edite fastjack.py con su editor de texto favorito:
+Edite fastjack.py con su editor de texto favorito o use fastjack-pure.py:
 1) Busque la linea:
        ` os.system("gnome-terminal -- python hostjack-checker.py " + target + " " + torstatus) `
 
