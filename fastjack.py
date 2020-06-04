@@ -179,7 +179,7 @@ def main(argv):
 
     if tor is False:
         print(Fore.GREEN + Style.BRIGHT + "Conexion TOR: " + Style.RESET_ALL + Back.RED + "Desactivado"+ Style.RESET_ALL + Fore.GREEN + Style.BRIGHT + " o " + Style.RESET_ALL + Back.RED + "NO Encontrada" + Style.RESET_ALL)
-        ipcheck_url2 = 'http://canihazip.com/s' 
+        ipcheck_url2 = 'http://icanhazip.com' 
         torstatus = "-F"
         try:
             regular_ip = requests.get(ipcheck_url2) 
