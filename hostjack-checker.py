@@ -15,7 +15,7 @@ from colorama import Fore, Back, Style
 web = sys.argv[1]
 h = "http://"
 fullweb = h + web
-ipchecker = 'http://canihazip.com/s'
+ipchecker = 'http://icanhazptr.com''
 
 def check_ip( url, timeout=5 ):
 	
@@ -40,7 +40,7 @@ if len(sys.argv) >= 2:
       tor = False
 
 if tor is True:
-    ipcheck_url = 'http://canihazip.com/s' 
+    ipcheck_url = 'http://icanhazptr.com'' 
     socks.setdefaultproxy(socks.PROXY_TYPE_SOCKS5, '127.0.0.1', 9050) 
     socket.socket = socks.socksocket
     try:
